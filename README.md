@@ -1,7 +1,7 @@
 # Solace
 
-A family of violet themes for calm, focused digital spaces.
+A family of calm, violet themes for your favourite digital tools.
 
-Get Solace for your favourite tool -> [website link]()
+<br/>
 
-## Preview
+[![Install Solace for Zed](https://img.shields.io/badge/Install%20for%20Zed-8A63D2?style=for-the-badge&logo=zedindustries&logoColor=white)](https://github.com/bhavya-dang/Solace)
