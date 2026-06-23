@@ -1,75 +1,210 @@
 const baseCodeLines = [
   {
     n: 1,
-    parts: [
-      ["keyword", "const"],
-      ["plain", " palette "],
-      ["operator", "="],
-      ["plain", " createTheme"],
-      ["operator", "({"],
-    ],
+    parts: [["comment", "// Solace theme tokens for focused interfaces"]],
   },
   {
     n: 2,
     parts: [
-      ["plain", "  name"],
-      ["operator", ":"],
-      ["string", ' "Solace Dark"'],
-      ["operator", ","],
+      ["keyword", "type"],
+      ["plain", " ThemeMode "],
+      ["operator", "="],
+      ["string", ' "dark"'],
+      ["plain", " "],
+      ["operator", "|"],
+      ["plain", " "],
+      ["string", ' "light"'],
+      ["operator", ";"],
     ],
   },
   {
     n: 3,
     parts: [
-      ["plain", "  surface"],
-      ["operator", ":"],
-      ["string", ' "#1D1926"'],
-      ["operator", ","],
+      ["keyword", "interface"],
+      ["plain", " SolaceTheme "],
+      ["operator", "{"],
     ],
   },
   {
     n: 4,
     parts: [
-      ["plain", "  accent"],
+      ["plain", "  "],
+      ["keyword", "readonly"],
+      ["plain", " name"],
       ["operator", ":"],
-      ["string", ' "#8A63D2"'],
-      ["operator", ","],
+      ["plain", " "],
+      ["type", "string"],
+      ["operator", ";"],
     ],
   },
   {
     n: 5,
     parts: [
-      ["plain", "  syntax"],
+      ["plain", "  mode"],
       ["operator", ":"],
-      ["plain", " ["],
-      ["string", '"violet"'],
-      ["plain", ", "],
-      ["string", '"pink"'],
-      ["plain", ", "],
-      ["string", '"cyan"'],
-      ["plain", "]"],
-      ["operator", ","],
+      ["plain", " "],
+      ["type", "ThemeMode"],
+      ["operator", ";"],
     ],
   },
   {
     n: 6,
     parts: [
-      ["plain", "  contrast"],
+      ["plain", "  surface"],
       ["operator", ":"],
-      ["number", " 0.78"],
-      ["operator", ","],
+      ["plain", " "],
+      ["type", "string"],
+      ["operator", ";"],
     ],
   },
   {
     n: 7,
     parts: [
-      ["plain", "  mood"],
+      ["plain", "  accents"],
       ["operator", ":"],
-      ["function", " keepCalm"],
-      ["operator", "(),"],
+      ["plain", " "],
+      ["type", "string"],
+      ["operator", "[];"],
     ],
   },
-  { n: 8, parts: [["operator", "});"]] },
+  {
+    n: 8,
+    parts: [
+      ["plain", "  calm"],
+      ["operator", ":"],
+      ["plain", " "],
+      ["type", "boolean"],
+      ["operator", ";"],
+    ],
+  },
+  { n: 9, parts: [["operator", "}"]] },
+  {
+    n: 10,
+    parts: [
+      ["keyword", "const"],
+      ["plain", " solace"],
+      ["operator", ":"],
+      ["plain", " "],
+      ["type", "SolaceTheme"],
+      ["plain", " "],
+      ["operator", "="],
+      ["plain", " "],
+      ["function", "createTheme"],
+      ["operator", "({"],
+    ],
+  },
+  {
+    n: 11,
+    parts: [
+      ["plain", "  name"],
+      ["operator", ":"],
+      ["plain", " "],
+      ["string", ' "Solace Dark"'],
+      ["operator", ","],
+    ],
+  },
+  {
+    n: 12,
+    parts: [
+      ["plain", "  mode"],
+      ["operator", ":"],
+      ["plain", " "],
+      ["string", ' "dark"'],
+      ["operator", ","],
+    ],
+  },
+  {
+    n: 13,
+    parts: [
+      ["plain", "  surface"],
+      ["operator", ":"],
+      ["plain", " "],
+      ["string", ' "#1D1926"'],
+      ["operator", ","],
+    ],
+  },
+  {
+    n: 14,
+    parts: [
+      ["plain", "  accents"],
+      ["operator", ":"],
+      ["plain", " ["],
+      ["string", '"violet"'],
+      ["operator", ","],
+      ["plain", " "],
+      ["string", '"pink"'],
+      ["operator", ","],
+      ["plain", " "],
+      ["string", '"cyan"'],
+      ["operator", ","],
+      ["plain", " "],
+      ["string", '"gold"'],
+      ["plain", "]"],
+      ["operator", ","],
+    ],
+  },
+  {
+    n: 15,
+    parts: [
+      ["plain", "  contrast"],
+      ["operator", ":"],
+      ["plain", " "],
+      ["number", "0.78"],
+      ["operator", ","],
+      ["plain", " calm"],
+      ["operator", ":"],
+      ["plain", " "],
+      ["boolean", "true"],
+      ["operator", ","],
+    ],
+  },
+  {
+    n: 16,
+    parts: [
+      ["plain", "  selection"],
+      ["operator", ":"],
+      ["plain", " "],
+      ["function", "mix"],
+      ["operator", "("],
+      ["string", '"#8A63D2"'],
+      ["operator", ","],
+      ["plain", " "],
+      ["number", "0.42"],
+      ["operator", "),"],
+    ],
+  },
+  { n: 17, parts: [["operator", "});"]] },
+  {
+    n: 18,
+    parts: [
+      ["keyword", "export"],
+      ["plain", " "],
+      ["keyword", "function"],
+      ["plain", " applySolace"],
+      ["operator", "("],
+      ["plain", "target"],
+      ["operator", ":"],
+      ["plain", " "],
+      ["type", "HTMLElement"],
+      ["operator", ") {"],
+    ],
+  },
+  {
+    n: 19,
+    parts: [
+      ["plain", "  "],
+      ["keyword", "if"],
+      ["plain", " "],
+      ["operator", "("],
+      ["plain", "solace.calm"],
+      ["operator", ")"],
+      ["plain", " target.dataset.theme "],
+      ["operator", "="],
+      ["plain", " solace.name"],
+      ["operator", ";"],
+    ],
+  },
+  { n: 20, parts: [["operator", "}"]] },
 ];
 
 export const swatches = [
@@ -88,20 +223,63 @@ export const statusStyles = {
 };
 
 export const ports = [
-  { name: "Zed", status: "Available", tone: "green", href: "#" },
-  { name: "VS Code", status: "Planned", tone: "muted", href: "#" },
-  { name: "Zen", status: "Planned", tone: "muted", href: "#" },
-  { name: "OpenCode", status: "Planned", tone: "muted", href: "#" },
-  { name: "Ghostty", status: "Planned", tone: "muted", href: "#" },
+  {
+    name: "Zed",
+    icon: "/icons/zed.svg",
+    accent: "#CB74E8",
+    surface: "#CB74E820",
+    status: "Available",
+    tone: "green",
+    href: "#",
+  },
+  {
+    name: "Visual Studio Code",
+    icon: "/icons/visual-studio-code.svg",
+    accent: "#3EA6FF",
+    surface: "#3EA6FF20",
+    status: "Planned",
+    tone: "muted",
+    href: "#",
+  },
+  {
+    name: "Zen",
+    icon: "/icons/zen-browser.svg",
+    accent: "#E2D7F7",
+    surface: "#E2D7F720",
+    status: "Planned",
+    tone: "muted",
+    href: "#",
+  },
+  {
+    name: "OpenCode",
+    icon: "/icons/opencode.svg",
+    accent: "#63B8B0",
+    surface: "#63B8B020",
+    status: "Planned",
+    tone: "muted",
+    href: "#",
+  },
+  {
+    name: "Ghostty",
+    icon: "/icons/ghostty.svg",
+    accent: "#D59A5D",
+    surface: "#D59A5D20",
+    status: "Planned",
+    tone: "muted",
+    href: "#",
+  },
 ];
 
 export function syntaxClass(kind, light = false) {
   const classes = {
+    boolean: "text-solace-gold",
+    comment: light ? "text-solace-lightMuted/70" : "text-solace-muted/70",
     keyword: "text-solace-violet",
     operator: light ? "text-solace-lightMuted" : "text-solace-muted",
     string: "text-solace-green",
     number: "text-solace-gold",
     function: "text-solace-cyan",
+    type: "text-solace-blue",
     plain: light ? "text-solace-lightText" : "text-solace-text",
   };
   return classes[kind] ?? classes.plain;
@@ -137,24 +315,39 @@ export function getSceneClasses(light) {
 
 export function getCodeLines(themeName, light) {
   return baseCodeLines.map((line) => {
-    if (line.n === 2) {
+    if (line.n === 11) {
       return {
         ...line,
         parts: [
           ["plain", "  name"],
           ["operator", ":"],
-          ["string", ` "${themeName}"`],
+          ["plain", " "],
+          ["string", ` "${themeName}`],
           ["operator", ","],
         ],
       };
     }
 
-    if (line.n === 3) {
+    if (line.n === 12) {
+      return {
+        ...line,
+        parts: [
+          ["plain", "  mode"],
+          ["operator", ":"],
+          ["plain", " "],
+          ["string", light ? ' "light"' : ' "dark"'],
+          ["operator", ","],
+        ],
+      };
+    }
+
+    if (line.n === 13) {
       return {
         ...line,
         parts: [
           ["plain", "  surface"],
           ["operator", ":"],
+          ["plain", " "],
           ["string", light ? ' "#E8E2F2"' : ' "#1D1926"'],
           ["operator", ","],
         ],

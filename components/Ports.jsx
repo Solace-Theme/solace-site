@@ -14,31 +14,26 @@ export default function Ports() {
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-solace-violet">
             Ports
           </p>
-          <h2 className="max-w-2xl text-4xl font-semibold leading-tight text-solace-text sm:text-5xl">
-            A small ecosystem, kept consistent.
+          <h2 className="max-w-full text-4xl font-semibold leading-tight text-solace-text sm:text-5xl">
+            Available for all your favourite tools.
           </h2>
         </div>
-        <p className="max-w-md text-base leading-7 text-solace-muted">
-          Each port carries the same violet base, accent rhythm, and low-fatigue
-          contrast into the tool it belongs to.
-        </p>
       </div>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {ports.map((port) => (
           <a
             key={port.name}
             href={port.href}
-            className="group rounded-2xl border border-solace-border bg-solace-raised p-5 transition hover:-translate-y-0.5 hover:border-solace-violet/60 hover:bg-solace-secondary focus:outline-none focus:ring-2 focus:ring-solace-violet focus:ring-offset-2 focus:ring-offset-solace-dark"
+            className="group rounded-2xl bg-solace-raised border border-transparent p-5 transition-all duration-200 hover:border-solace-violet/60"
           >
             <div className="mb-9 flex items-start justify-between">
-              <span className="grid size-11 place-items-center rounded-2xl border border-solace-border bg-solace-secondary font-mono text-sm text-solace-text">
-                {port.name.slice(0, 2)}
-              </span>
-              <ArrowUpRight className="size-4 text-solace-muted transition group-hover:text-solace-text" />
+              <img src={port.icon} alt={port.name} className="size-10" />
+
+              <ArrowUpRight className="size-4 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </div>
-            <h3 className="text-xl font-medium text-solace-text">
-              {port.name}
-            </h3>
+
+            <h3 className="text-xl font-medium">{port.name}</h3>
+
             <div
               className={`mt-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs ${statusStyles[port.tone]}`}
             >
