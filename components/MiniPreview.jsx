@@ -1,3 +1,5 @@
+// switched to using the sun/moon icons for variant switch
+// keeping for backup purposes
 import React from "react";
 
 import { Moon, Sun } from "lucide-react";

@@ -16,19 +16,19 @@ export default function Footer() {
           <div className="flex gap-5">
             <a
               className="transition hover:text-solace-text"
-              href="https://github.com/"
+              href="https://github.com/bhavya-dang/Solace/"
             >
               GitHub
             </a>
             <a
               className="transition hover:text-solace-text"
-              href="https://github.com/"
+              href="https://github.com/bhavya-dang/Solace/issues"
             >
               Issues
             </a>
             <a
               className="transition hover:text-solace-text"
-              href="https://github.com/"
+              href="https://github.com/bhavya-dang/Solace/releases"
             >
               Releases
             </a>
