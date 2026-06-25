@@ -6,19 +6,19 @@ import EditorScene from "./EditorScene";
 
 export default function Hero() {
   return (
-    <section className="mx-auto w-full max-w-screen-2xl flex min-h-screen flex-col items-center justify-center gap-20 px-5 py-16 sm:px-8 lg:px-10">
+    <section className="mx-auto w-full max-w-screen-2xl flex flex-col items-center gap-12 px-5 py-12 sm:py-16 sm:px-8 lg:min-h-screen lg:justify-center lg:gap-20 lg:px-10">
       <div className="flex flex-col items-center text-center">
         <p className="mb-6 rounded-full border border-solace-border bg-solace-raised px-4 py-2 text-sm text-solace-muted">
-          A violet theme family for modern tools
+          A violet theme family
         </p>
 
-        <h1 className="text-balance text-5xl font-semibold leading-[1.03] tracking-normal text-solace-text sm:text-7xl lg:text-[88px]">
+        <h1 className="text-balance text-4xl font-semibold leading-[1.03] tracking-normal text-solace-text sm:text-7xl lg:text-[88px]">
           Calm colors for focused work.
         </h1>
 
-        <p className="mt-7 max-w-3xl text-pretty text-lg leading-8 text-solace-muted sm:text-xl sm:leading-9">
-          Solace is a family of violet themes designed for long sessions, soft
-          contrast, and digital spaces that feel quiet after midnight.
+        <p className="mt-7 max-w-4xl text-pretty text-lg leading-8 text-solace-muted sm:text-xl sm:leading-9">
+          Solace is a family of violet themes with soft contrast, built for the
+          tools you use every day.
         </p>
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">

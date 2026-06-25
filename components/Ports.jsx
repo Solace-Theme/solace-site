@@ -18,7 +18,7 @@ export default function Ports() {
   return (
     <section
       id="ports"
-      className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
+      className="mx-auto max-w-7xl px-5 pt-10 pb-20 sm:px-8 lg:px-10 lg:py-28"
     >
       <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
         {portsHeading}
@@ -28,9 +28,9 @@ export default function Ports() {
           <a
             key={port.name}
             href={port.href}
-            className="group rounded-2xl bg-solace-raised border border-transparent p-5 transition duration-200 active:scale-[0.96] hover:shadow-[0_0_0_1px_rgba(138,99,210,0.6)]"
+            className="group rounded-2xl bg-solace-raised border border-transparent p-4 transition duration-200 active:scale-[0.96] hover:shadow-[0_0_0_1px_rgba(138,99,210,0.6)] sm:p-5"
           >
-            <div className="mb-9 flex items-start justify-between">
+            <div className="mb-5 flex items-start justify-between sm:mb-9">
               <img src={port.icon} alt={port.name} className="size-10" />
 
               <ArrowUpRight className="size-4 transition duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -39,7 +39,7 @@ export default function Ports() {
             <h3 className="text-xl font-medium">{port.name}</h3>
 
             <div
-              className={`mt-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs ${statusStyles[port.tone]}`}
+              className={`mt-4 inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-3 py-1 text-xs ${statusStyles[port.tone]}`}
             >
               {port.tone === "green" ? (
                 <Check className="size-3" />
