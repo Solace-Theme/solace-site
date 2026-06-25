@@ -18,7 +18,7 @@ export default function Ports() {
   return (
     <section
       id="ports"
-      className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28"
+      className="mx-auto max-w-7xl px-5 pt-10 pb-20 sm:px-8 lg:px-10 lg:py-28"
     >
       <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
         {portsHeading}
