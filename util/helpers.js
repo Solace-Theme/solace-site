@@ -268,7 +268,19 @@ export const ports = [
     tone: "muted",
     href: "#",
   },
-];
+  {
+    name: "Obsidian",
+    icon: "/icons/obsidian.svg",
+    accent: "#7C3AED",
+    surface: "#7C3AED20",
+    status: "Available",
+    tone: "green",
+    href: "https://github.com/Solace-Theme/solace-obsidian",
+  },
+].sort((a, b) => {
+  const order = { Available: 0, "In Progress": 1, Planned: 2 };
+  return (order[a.status] ?? 3) - (order[b.status] ?? 3);
+});
 
 export function syntaxClass(kind, light = false) {
   const classes = {
