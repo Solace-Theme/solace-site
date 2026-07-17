@@ -275,7 +275,7 @@ export const ports = [
     surface: "#7C3AED20",
     status: "Available",
     tone: "green",
-    href: "https://github.com/Solace-Theme/solace-obsidian",
+    href: "https://community.obsidian.md/themes/solace",
   },
 ].sort((a, b) => {
   const order = { Available: 0, "In Progress": 1, Planned: 2 };
